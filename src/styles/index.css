@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%; }
+
+html,
+body {
+  height: 100%;
+  line-height: 1; }
+
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none;
+  box-shadow: 0 0 0; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+
+ul, ol {
+  list-style: none; }
+
+input, textarea {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 0; }
+
+button {
+  border: none;
+  background-color: #fff; }
+
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial; }
+
+body, html {
+  min-height: 100vh; }
