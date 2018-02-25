@@ -1,4 +1,14 @@
 .Search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &-button {
+    margin-left: 10px;
+  }
+}
+
+.Search-input {
   max-width: 400px;
   width: 100%;
 
@@ -8,13 +18,9 @@
   color: #222;
 
   transition: box-shadow 0.2s cubic-bezier(0.25, 0.25, 0.25, 0.25);
-
-  &-button {
-    margin-left: 10px;
-  }
 }
 
-.Search:focus {
+.Search-input:focus {
   box-shadow: 0 0 6px 4px rgba(71, 207, 115, 0.48);
 }
 

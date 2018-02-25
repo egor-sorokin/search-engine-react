@@ -1,14 +1,19 @@
 .Search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .Search-button {
+    margin-left: 10px; }
+
+.Search-input {
   max-width: 400px;
   width: 100%;
   padding: 12px 10px 10px;
   font-size: 16px;
   color: #222;
   transition: box-shadow 0.2s cubic-bezier(0.25, 0.25, 0.25, 0.25); }
-  .Search-button {
-    margin-left: 10px; }
 
-.Search:focus {
+.Search-input:focus {
   box-shadow: 0 0 6px 4px rgba(71, 207, 115, 0.48); }
 
 .Button {
