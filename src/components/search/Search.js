@@ -31,7 +31,8 @@ class Search extends Component {
     const requestWikiData = fetch(wikiUrl)
       .then((response) => {
         return response.json();
-      }).then((data) => {
+      })
+      .then((data) => {
         let result = [];
 
         for (let i = 0, len = data[1].length; i < len; i++) {
@@ -44,12 +45,16 @@ class Search extends Component {
         }
 
         return result;
+      })
+      .catch((error) => {
+        console.error('Fetch WikiData was failed: ', error);
       });
 
     const requestNYTimesData = fetch(NYTimesUrl)
       .then((response) => {
         return response.json();
-      }).then((data) => {
+      })
+      .then((data) => {
         let result = [];
 
         for (let i = 0, len = data.response.docs.length; i < len; i++) {
@@ -62,12 +67,24 @@ class Search extends Component {
         }
 
         return result;
+      })
+      .catch((error) => {
+        console.error('Fetch NYTimesData was failed: ', error);
       });
 
 
-    return Promise.all([requestWikiData, requestNYTimesData])
+    return Promise.all([
+        requestWikiData,
+        requestNYTimesData
+      ])
       .then((results) => {
-        return { options: [...results[0], ...results[1]]};
+        let wikiData = results[0] || [];
+        let NYTimesData = results[1] || [];
+
+        return {options: [...wikiData, ...NYTimesData]};
+      })
+      .catch(function (err) {
+        console.error('Promise.all error', err);
       });
   };
 
