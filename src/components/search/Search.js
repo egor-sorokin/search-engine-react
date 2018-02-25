@@ -20,7 +20,7 @@ class Search extends Component {
     });
   };
 
-  getUsers = (input) => {
+  getData = (input) => {
     if (!input) {
       return Promise.resolve({options: []});
     }
@@ -79,7 +79,7 @@ class Search extends Component {
           valueKey="id"
           labelKey="title"
           value={this.state.value}
-          loadOptions={this.getUsers}
+          loadOptions={this.getData}
           onChange={this.onChange}
         />
 
