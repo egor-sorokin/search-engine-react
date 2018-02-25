@@ -60,7 +60,7 @@ class Search extends Component {
         for (let i = 0, len = data.response.docs.length; i < len; i++) {
           result.push({
             'id': v4(),
-            'title': data.response.docs[i]['snippet'],
+            'title': data.response.docs[i]['headline']['main'],
             'text': data.response.docs[i]['snippet'],
             'link': data.response.docs[i]['web_url']
           })
