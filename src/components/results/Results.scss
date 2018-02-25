@@ -1,4 +1,10 @@
 .Result {
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto;
+  padding: 20px;
+
   &-list {
   }
   &-item {
@@ -42,7 +48,8 @@
       text-overflow: ellipsis;
       cursor: pointer;
 
-      transition: color 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
+      transition: color 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.25),
+      transform 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.25);
     }
   }
 }
@@ -50,5 +57,6 @@
 .Result-item:hover {
   .Result-item-link {
     color: #8a8a8a;
+    transform: translateX(4px);
   }
 }
