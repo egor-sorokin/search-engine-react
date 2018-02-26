@@ -1,6 +1,7 @@
 ## How to run
+In command line type:
 ```
-git clone 
+git clone <name of this repository>
 cd path/to/project
 npm start
 ```
@@ -35,16 +36,13 @@ This description was taken and modified form the repository [create-react-app]
 2) No post- and pre-processing are required.
 3) There can be requests to many APIs, but each request should be processed in a unique way since responses are always different
 4) In the future, there can be additional pages with pictures/videos/ music and different filters for the search and search result, 
-which can be built easily in the current state of the project.  
-   
+which can be built easily in the current state of the project.   
 
 
 #### technical concepts and technology choice
 1) Since the interface is simple enough, there is no need to use full and heavy MVC frameworks such *EmberJS* or *AngularJS*
-2) The choice is between *React*, *Vue* and pure *ES6*.
- *React* is chosen because the community is bigger than *Vue* one,
- so there are more chances to find any type of support and it is stable.
-  There are some cool libraries for that as well.
+2) The choice is between *React*, *Vue* and pure *ES6*. 
+*React* was chosen because the community is bigger than *Vue* one, so there are more chances to find any type of support and it is stable. There are some cool libraries for that as well.
 3) [create-react-app] is a good starter kit for starting developing
 
 
@@ -55,12 +53,12 @@ which can be built easily in the current state of the project.
 4) Folder **components** includes each component and its own file for styles and testing.
 5) **index.js** is an entry point.
 
-**Assumption**: In the future **redux** will be used here so developer
- can split current *components* into *actions*, *store*, *reducers* and *components*
+**Assumption**: In the future **redux** will be used here so developer can split current *components* into *actions*, *store*, *reducers* and *components*
  
  
 #### tests
 Were not written. 
+
 
 #### deployment / building (including how we should build the project)
 Please see **"How to run"** section above. 
