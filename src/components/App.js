@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { v4 } from 'uuid';
 
 import Search from './search/Search'
-import Results from './results/Results'
+import ResultList from './result/ResultList'
 import './App.css';
 
 
@@ -10,15 +10,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: null
+      results: []
     };
   }
 
   onSearch = (e, value) => {
     e.preventDefault();
 
-    this.setState({
-      results: this.requestData(value)
+    this.requestData(value).then((result)=> {
+      this.setState({
+        results: result.options
+      });
     });
   };
 
@@ -39,7 +41,8 @@ class App extends Component {
             'id': v4(),
             'title': data[1][i],
             'text': data[2][i],
-            'link': data[3][i]
+            'link': data[3][i],
+            'resource': 'wikipedia'
           })
         }
 
@@ -61,7 +64,8 @@ class App extends Component {
             'id': v4(),
             'title': data.response.docs[i]['headline']['main'],
             'text': data.response.docs[i]['snippet'],
-            'link': data.response.docs[i]['web_url']
+            'link': data.response.docs[i]['web_url'],
+            'resource': 'nytimes'
           })
         }
 
@@ -101,7 +105,7 @@ class App extends Component {
           </div>
         </header>
         <main className="App-result">
-          <Results
+          <ResultList
             results={this.state.results}
           />
         </main>

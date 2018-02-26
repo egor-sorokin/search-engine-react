@@ -16,19 +16,27 @@
       content: '';
       display: flex;
       align-self: center;
-      width: 10px;
-      height: 10px;
-      background-color: #3fb866; }
+      width: 30px;
+      height: 30px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%; }
+    .Result-item--nytimes:before {
+      background-image: url("../../images/nytimes.png"); }
+    .Result-item--wikipedia:before {
+      background-image: url("../../images/wikipedia.png"); }
     .Result-item-link {
       overflow: hidden;
       width: 100%;
       padding-left: 15px;
-      font-size: 18px;
       color: #222;
-      font-weight: 500;
-      text-overflow: ellipsis;
       cursor: pointer;
       transition: color 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.25), transform 0.3s cubic-bezier(0.25, 0.25, 0.25, 0.25); }
+    .Result-item-title {
+      font-size: 18px;
+      font-weight: 500; }
+    .Result-item-text {
+      font-size: 14px; }
 
 .Result-item:hover .Result-item-link {
   color: #8a8a8a;
