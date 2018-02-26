@@ -41,7 +41,8 @@ class App extends Component {
             'id': v4(),
             'title': data[1][i],
             'text': data[2][i],
-            'link': data[3][i]
+            'link': data[3][i],
+            'resource': 'wikipedia'
           })
         }
 
@@ -63,7 +64,8 @@ class App extends Component {
             'id': v4(),
             'title': data.response.docs[i]['headline']['main'],
             'text': data.response.docs[i]['snippet'],
-            'link': data.response.docs[i]['web_url']
+            'link': data.response.docs[i]['web_url'],
+            'resource': 'nytimes'
           })
         }
 

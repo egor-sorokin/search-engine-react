@@ -16,9 +16,15 @@
       content: '';
       display: flex;
       align-self: center;
-      width: 10px;
-      height: 10px;
-      background-color: #3fb866; }
+      width: 30px;
+      height: 30px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100%; }
+    .Result-item--nytimes:before {
+      background-image: url("../../images/nytimes.png"); }
+    .Result-item--wikipedia:before {
+      background-image: url("../../images/wikipedia.png"); }
     .Result-item-link {
       overflow: hidden;
       width: 100%;
