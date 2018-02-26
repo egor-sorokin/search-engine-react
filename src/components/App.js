@@ -24,12 +24,21 @@ class App extends Component {
     });
   };
 
+  timeout = (ms, promise) => {
+    const timeout = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error('timeout'));
+      }, ms);
+    });
+
+    return Promise.race([timeout, promise]);
+  };
 
   requestData = (input) => {
     const wikiUrl = `https://en.wikipedia.org//w/api.php?action=opensearch&search=${input}&origin=*`;
     const NYTimesUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=18cdf939cc484212834e3766d1b63555&q=${input}&format=json`;
 
-    const requestWikiData = fetch(wikiUrl)
+    const requestWikiData = this.timeout(2000, fetch(wikiUrl))
       .then((response) => {
         return response.json();
       })
@@ -52,7 +61,7 @@ class App extends Component {
         console.error('Fetch WikiData was failed: ', error);
       });
 
-    const requestNYTimesData = fetch(NYTimesUrl)
+    const requestNYTimesData = this.timeout(2000, fetch(NYTimesUrl))
       .then((response) => {
         return response.json();
       })
