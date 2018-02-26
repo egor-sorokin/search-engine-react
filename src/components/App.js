@@ -10,15 +10,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      result: null
+      results: []
     };
   }
 
   onSearch = (e, value) => {
     e.preventDefault();
 
-    this.setState({
-      results: this.requestData(value)
+    this.requestData(value).then((result)=> {
+      this.setState({
+        results: result.options
+      });
     });
   };
 

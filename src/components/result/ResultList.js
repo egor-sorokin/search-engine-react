@@ -7,11 +7,10 @@ import Result from './Result'
 const ResultList = ({ results }) => (
   <div className="Result">
     <ul className="Result-list">
-      {results.forEach(item =>
+      {results.map(item =>
         <Result
-          title={item.title}
-          text={item.text}
-          link={item.link}
+          key={item.id}
+          {...item}
         />
       )}
     </ul>
