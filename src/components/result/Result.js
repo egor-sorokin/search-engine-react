@@ -6,8 +6,8 @@ const Result = ({ title, text, link }) => (
     <a href={link}
        className="Result-item-link"
        title="">
-      <div className="Result-item-icon"></div>
-      {text}
+      <h2 className="Result-item-title">{title}</h2>
+      <p className="Result-item-text">{text}</p>
     </a>
   </li>
 );
