@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { v4 } from 'uuid';
 
 import Search from './search/Search'
-import Results from './results/Results'
+import ResultList from './result/ResultList'
 import './App.css';
 
 
@@ -101,7 +101,7 @@ class App extends Component {
           </div>
         </header>
         <main className="App-result">
-          <Results
+          <ResultList
             results={this.state.results}
           />
         </main>
