@@ -1,15 +1,15 @@
 ## How to run
-In command line type:
+In your command line type:
 ```
 git clone <name of this repository>
 cd path/to/project
 npm start
 ```
 
-Runs the app in development mode.
+Run the app in development mode.
 Open http://localhost:3000 to view it in the browser.
 
-The page will automatically reload if you make changes to the code.
+The page will automatically reload if you make changes in the code.
 You will see the build errors and lint warnings in the console.
 
 **Note**: if it's not running try to type and run `npm i` command before start
